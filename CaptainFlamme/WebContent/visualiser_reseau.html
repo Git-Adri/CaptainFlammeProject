@@ -22,7 +22,16 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	<style>
+		.centered tr th {
+			vertical-align:middle !important;
+			text-align:center !important;
+		}
+		.centeredtd tr td {
+			vertical-align:middle !important;
+			text-align:center !important;
+		}
+	</style>
 </head>
 
 <body>
@@ -72,75 +81,120 @@
     <div class="container-fluid main-page">
 		<div class ="row">
 			<!-- Page Content -->
-		        <div class="col-md-2 menu_gauche ">
-	                <p class="lead">Défaillance boîtiers</p>
-	                <div class="list-group">
-						<a href="#" class="list-group-item">Boîtier 1</a>
-	                    <a href="#" class="list-group-item">Boîtier 2</a>
-	                    <a href="#" class="list-group-item">Boîtier 3</a>
-	                    <a href="#" class="list-group-item">Boîtier 4</a>
-	                    <a href="#" class="list-group-item">Boîtier 5</a>
-	                    <a href="#" class="list-group-item">Voir tout</a>
+		        <div class="container col-md-3 menu_gauche ">
+	                <p class="lead">Récapitulatif boîtiers</p>
+	                	<div class="list-group">
+							<table class="table table-bordered table-striped table-dark">
+						
+								<thead class="centered">
+									<tr>
+						  				<th scope="col">Boîtiers</th>
+						 				<th scope="col">Consommation</th>
+									</tr>
+								</thead>
+								<tbody class="centered centeredtd">
+									<tr>
+										<th><a href="#" class="list-group-item">Boîtier 1</a></th>
+										<td scope="col">Conso</td>
+									</tr>
+									<tr>
+										<th><a href="#" class="list-group-item">Boîtier 2</a>
+										<td scope="col">Conso</td>
+									</tr>
+									<tr>
+										<th><a href="#" class="list-group-item">Boîtier 3</a></th>
+										<td scope="col text-center">Conso</td>
+									</tr>
+									<tr>
+										<th><a href="#" class="list-group-item">Boîtier 4</a>
+										<td scope="col">Conso</td>
+									</tr>
+									<tr>
+										<th><a href="#" class="list-group-item">Boîtier 5</a></th>
+										<td scope="col">Conso</td>
+									</tr>
+									<tr>
+										<th><a href="#" class="list-group-item">Total</a>
+										<td scope="col">Conso</td>
+									</tr>
+
+
+							</tbody>
+						</table>
 	                </div>
 	            </div>
-		<div class="container col-md-10 main_content" style="padding-left:5%">
-	    	<div class="col-md-4">
-				<!--<div class="text-center">       -->
-				<!-- 1er tableau -->
-				<p class="lead">Défaillance charges</p>
-					<table class="table table-bordered table-striped table-dark">
-					  <thead>
-						<tr>
-						  <th scope="col">Nom charge</th>
-						  <th scope="col">Etat</th>
-						</tr>
-					  </thead>
-					  <tbody>
-						<tr>
-						  <td scope="row">Charge 1</td>
-						  <td>Defaillante</td>
-						</tr>
-						<tr>
-						  <td scope="row">Charge 2</td>
-						  <td>Court-circuit</td>
-
-						</tr>
-						<tr>
-						  <td scope="row">Charge 3</td>
-						  <td>Court-circuit</td>
-
-						</tr>
-					  </tbody>
-					</table>
-			</div>
-			<div class="container-fluid col-md-4">
+		<div class="container col-md-9 main_content" style="padding-left:5%">
+	    	
+			<div class="container-fluid col-md-7">
 				<!-- 2eme tableau -->
-				<p class="lead">Défaillance Sous-disjoncteurs</p>
+				<p class="lead">Boîtier X</p>
 					<table class="table table-bordered table-striped table-dark">
-					  <thead>
+					<thead class="centered">
 						<tr>
-						  <th scope="col">Nom sous-disjoncteur</th>
-						  <th scope="col">Etat</th>
+							<th scope="col">Interrupteur</th>
+							<th scope="col">Nom</th>
+							<th scope="col">Etat</th>
+							<th scope="col">Charge</th>
+							<th scope="col">Nom</th>
+							<th scope="col">Calibre</th>
+							<th scope="col">Priorité</th>
+							<th scope="col">Etat</th>
 						</tr>
-					  </thead>
-					  <tbody>
+					</thead>
+					<tbody class="centered centeredtd">
 						<tr>
-						  <td scope="row">Sous-disjoncteur 1</td>
-						  <td>Defaillant</td>
-						</tr>
-						<tr>
-						  <td scope="row">Sous-disjoncteur 2</td>
-						  <td>Court-circuit</td>
+							<td rowspan="3"> Interrupteur 1 </th>
+							<td rowspan="3"> Int1 </td>
+							<td rowspan="3"> On </td>
+							<td> Charge 1</td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> On </td>							
 
 						</tr>
 						<tr>
-						  <td scope="row">Sous-disjoncteur 3</td>
-						  <td>Court-circuit</td>
+							<td> Charge 2</td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> Off </td>	
+						</tr>
+						<tr>
+							<td> Charge 3</td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> On </td>	
+						</tr>
+						<tr>
+							<td rowspan="3"> Interrupteur 2 </td>
+							<td rowspan="3"> Int2 </td>
+							<td rowspan="3"> Off </td>
+							<td> Charge 1</td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> Off </td>							
 
 						</tr>
-					  </tbody>
+						<tr>
+							<td> Charge 2</td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> Off </td>	
+						</tr>
+						<tr>
+							<td> Charge 3</td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> ... </td>
+							<td> Off </td>	
+						</tr>
+					</tbody>
 					</table>
-					
+			<div class="col-xs-12 col-md-8"><a href="#"><img src="images/ping.png"></a></div>
 	    	</div> <!-- /container -->
 	     </div>
 		</div>
