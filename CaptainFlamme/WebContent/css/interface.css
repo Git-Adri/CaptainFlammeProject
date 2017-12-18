@@ -1,0 +1,15 @@
+.row{margin-right:0px;margin-left:0px}
+			
+.user-prof img {height:60px}
+
+.vertical-align {
+					display: flex;
+					align-items: center;
+				}
+.header-logo{margin-bottom:15px}
+
+.nav-main{  border-radius: 0 !important;}
+
+.user-prof{padding-top:20px}
+
+.user-prof img{margin-right:10px}
