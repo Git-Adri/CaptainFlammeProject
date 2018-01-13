@@ -9,10 +9,6 @@ public class InterrupteurVirtuel extends Interrupteur {
 		super(id, etatActuelType.OFF,nom, charges);
 		this.groupesCharge=groupesCharge;
 	}
-	public InterrupteurVirtuel(int id, String nom,etatActuelType etat, ArrayList <Charge> charges,ArrayList<GroupeCharge> groupesCharge ) {
-		super(id, etat,nom, charges);
-		this.groupesCharge=groupesCharge;
-	}
 	public ArrayList<GroupeCharge> getGroupesCharge() {
 		return groupesCharge;
 	}

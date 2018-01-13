@@ -8,5 +8,12 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/json-lib-2.2.2-jdk15.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/ezmorph.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/commons-lang.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/commons-collections.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/commons-beanutils-1.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

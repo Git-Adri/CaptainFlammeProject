@@ -9,7 +9,6 @@ public class Category {
 	private ArrayList <GroupeCharge> groupesCharge;
 	private ArrayList <Interrupteur> interrupteurs;
 	private ArrayList <Charge> charges;
-	
 	public Category(int idCategory, String nomCategory, double consommation, ArrayList<GroupeCharge> groupesCharge,
 			ArrayList<Interrupteur> interrupteurs, ArrayList<Charge> charges) {
 		this.idCategory = idCategory;

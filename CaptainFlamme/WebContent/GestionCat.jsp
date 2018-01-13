@@ -1,3 +1,8 @@
+<%@ page language="java" 
+    contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"
+    import="beans.Charge,beans.Category,java.util.ArrayList,java.util.Iterator"
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,13 +59,13 @@
 	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	                <ul class="nav navbar-nav">
 	                    <li>
-	                        <a href="#">Visualiser rÃ©seau</a>
+	                        <a href="#">Visualiser réseau</a>
 	                    </li>
 	                    <li>
-	                        <a href="#">CatÃ©gories</a>
+	                        <a href="#">Catégories</a>
 	                    </li>
 						<li>
-	                        <a href="#">GÃ©nÃ©rer rapport	</a>
+	                        <a href="#">Générer rapport	</a>
 	                    </li>
 						<li>
 	                        <a href="#">Action	</a>
@@ -80,130 +85,86 @@
 			        <div class="col-md-2 menu_gauche ">
 		                <p class="lead">Administration</p>
 		                <div class="list-group">
-							<a href="#" class="list-group-item">Gestion catÃ©gories</a>
+							<a href="#" class="list-group-item">Gestion catégories</a>
 		                    <a href="#" class="list-group-item">Gestion utilisateurs</a>
-		                    <a href="#" class="list-group-item">Gestion du rÃ©seau</a>
+		                    <a href="#" class="list-group-item">Gestion du réseau</a>
 		                </div>
 		            </div>
 		    	<div class="container col-md-10 main-content">
-		    	<h3>Gestion catÃ©gories</h3>
+		    	<h3>Gestion catégories</h3>
 	    	
 		<div class="panel-group" id="accordion">
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title">
-		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-		        Chambre </a>
-		      </h4>
-		    </div>
-		    <div id="collapse1" class="panel-collapse collapse">
-		      <div class="panel-body">
-		      	<div class="row">
-			      	<div class="pull-bottom">
-			      		<h4>Charges</h4>
-			      	</div>
-			        <div class="pull-right pull-bottom">
-				       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Ajouter charge</button>
-				       
-				      
-					  
-			        </div>
-		        </div>
-		      <table class="table">
-		  <thead>
-		    <tr>
-		      <th scope="col" class="col-sm-3">Nom</th>
-		      <th scope="col" class="col-sm-3">Boitier</th>
-		      <th scope="col" class="col-sm-3">Num Charge</th>
-		      <th scope="col" class="col-sm-2">Editer</th>
-		      <th scope="col" class="col-sm-1">Supprimer</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">Prise1</th>
-		      <td>1</td>
-		      <td>4</td>
-		      <td>edit</td>
-		      <td><a href="#">X</a></td>
-		    </tr>
-		    <tr>
-		      <th scope="row">Lampe4</th>
-		      <td>2</td>
-		      <td>1</td>
-		      <td>edit</td>
-		      <td><a href="#">X</a></td>
-		    </tr>
-		    <tr>
-		      <th scope="row">Prise3</th>
-		      <td>1</td>
-		      <td>2</td>
-		      <td>edit</td>
-		      <td><a href="#">X</a></td>
-		    </tr>
-		  </tbody>
-		</table>
-			</div>
-		    </div>
-		  </div>
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title">
-		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-		        Salon</a>
-		      </h4>
-		    </div>
-		    <div id="collapse2" class="panel-collapse collapse">
-		    <div class="panel-body">
-		          	<div class="row">
-			      	<div class="pull-bottom">
-			      		<h4>Charges</h4>
-			      	</div>
-			        <div class="pull-right pull-bottom">
-				       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Ajouter charge</button>
-		       
-		      
-			  
-	        </div>
-        </div>
-		    <table class="table">
-			  <thead>
-			    <tr>
-			      <th scope="col" class="col-sm-3">Nom</th>
-			      <th scope="col" class="col-sm-3">Boitier</th>
-			      <th scope="col" class="col-sm-3">Charge</th>
-			      <th scope="col" class="col-sm-2">Editer</th>
-			      <th scope="col" class="col-sm-1">Supprimer</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">Prise1</th>
-			      <td>1</td>
-			      <td>4</td>
-			      <td>edit</td>
-			      <td><a href="#">X</a></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">Lampe4</th>
-			      <td>2</td>
-			      <td>1</td>
-			      <td>edit</td>
-			      <td><a href="#">X</a></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">Prise3</th>
-			      <td>1</td>
-			      <td>2</td>
-			      <td>edit</td>
-			      <td><a href="#">X</a></td>
-			    </tr>
-			  </tbody>
-			</table>
-    </div>
-		  </div>
+		  
+		  <%
+
+			ArrayList<Category> listeCat = (ArrayList<Category>)request.getAttribute("listeCat");
+		ArrayList<Category> lstCat = new ArrayList<Category>();
+		ArrayList<Charge> lstCharge = new ArrayList<Charge>();
+		Charge ll = new Charge(1,"prise",1,1,20.4,Charge.prioriteType.QUATRE,Charge.etatActuelType.ON,Charge.etatDefaultType.ON,420);
+		Charge l2 = new Charge(4,"machin",2,4,20.4,Charge.prioriteType.QUATRE,Charge.etatActuelType.ON,Charge.etatDefaultType.ON,420);
+		lstCharge.add(ll);
+		lstCharge.add(l2);
+		Category test = new Category(1,"Chambre",42,null,null,lstCharge);
+	Category test2 = new Category(1,"Cuisine",42,null,null,lstCharge);
 		
-		</div>
+		lstCat.add(test2);
+		lstCat.add(test);
+		int i = 0;			
+	Iterator itr = lstCat.iterator();
+			Category cat;
+			while(itr.hasNext()){
+				cat = (Category)itr.next();
+				i++;			
+			%>
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href=<%="#collapse"+i%>>
+			        <%=cat.getNomCategory()%></a>
+			      </h4>
+			    </div>
+			    <div id=<%="collapse"+i %> class="panel-collapse collapse">
+			  	  <div class="panel-body">
+			         <div class="row">
+				      	<div class="pull-bottom">
+				      		<h4>Charges</h4>
+				      	</div>
+				        <div class="pull-right pull-bottom">
+					       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Ajouter charge</button>
+			    
+			      
+				  
+		        		</div>
+			        </div>
+					    <table class="table">
+						  <thead>
+						    <tr>
+						      <th scope="col" class="col-sm-3">Nom</th>
+						      <th scope="col" class="col-sm-3">Boitier</th>
+						      <th scope="col" class="col-sm-3">Charge</th>
+						      <th scope="col" class="col-sm-2">Editer</th>
+						      <th scope="col" class="col-sm-1">Supprimer</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  <% for(Charge c : cat.getCharges()){ %>
+						    <tr>
+						      <th scope="row"><%= c.getNomCharge()%></th>
+						      <td><%= c.getNumBoitier()%></td>
+						      <td><%= c.getIdCharge()%></td>
+						      <td>edit</td>
+						      <td><a href="#">X</a></td>
+						    </tr>
+						    <tr>
+						    
+						  <%}%>
+						      
+						  </tbody>
+						</table>
+    				</div>
+	  			</div>
+			</div>
+		<% }%>
 	</div> <!-- /container -->
 	    </div> 
 		</div>
