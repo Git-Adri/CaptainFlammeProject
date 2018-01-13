@@ -19,8 +19,7 @@ public class Charge {
 
 	private double consomation;
 
-	public Charge(int id,String nom,int numboitier,int numsortie,double calibre, prioriteType prior, etatActuelType actuel,
-			etatDefaultType def, double conso) {
+	public Charge(int id,String nom,int numboitier,int numsortie,double calibre, prioriteType prior, etatActuelType actuel,etatDefaultType def, double conso) {
 		
 		this.idCharge = id;
 		this.nomCharge= nom;

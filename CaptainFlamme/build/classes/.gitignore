@@ -1,3 +1,4 @@
-/com/
-/servlets/
+/db/
+/servlet/
 /beans/
+/serviceactivity/

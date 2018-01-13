@@ -1,9 +1,9 @@
-package com.serviceactivity;
+package serviceactivity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.db.DBmanager;
+import db.DBmanager;
 
 //ÓÃÓÚµÇÂ¼ºÍ×¢²á
 public class service {

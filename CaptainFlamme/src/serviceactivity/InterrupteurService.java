@@ -1,9 +1,8 @@
-package com.serviceactivity;
+package serviceactivity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import beans.BoitierSecondaire;
 import beans.Charge;
@@ -11,12 +10,11 @@ import beans.Charge.etatDefaultType;
 import beans.Charge.prioriteType;
 import beans.GroupeCharge;
 import beans.GroupeCharge.Etat;
+import db.DBmanager;
 import beans.Interrupteur;
 import beans.InterrupteurPhysique;
 import beans.InterrupteurVirtuel;
 import beans.Charge.etatActuelType;
-
-import com.db.DBmanager;
 
 public class InterrupteurService {
 

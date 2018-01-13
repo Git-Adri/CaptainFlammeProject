@@ -1,7 +1,7 @@
 <%@ page language="java" 
     contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
-    import="beans.Charge,beans.Category,java.util.ArrayList,java.util.Iterator"
+    import="beans.Charge,beans.Category,java.util.*,serviceactivity.CategoryService"
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,27 +96,23 @@
 		<div class="panel-group" id="accordion">
 		  
 		  <%
-
-			ArrayList<Category> listeCat = (ArrayList<Category>)request.getAttribute("listeCat");
-		ArrayList<Category> lstCat = new ArrayList<Category>();
-		ArrayList<Charge> lstCharge = new ArrayList<Charge>();
-		Charge ll = new Charge(1,"prise",1,1,20.4,Charge.prioriteType.QUATRE,Charge.etatActuelType.ON,Charge.etatDefaultType.ON,420);
-		Charge l2 = new Charge(4,"machin",2,4,20.4,Charge.prioriteType.QUATRE,Charge.etatActuelType.ON,Charge.etatDefaultType.ON,420);
-		lstCharge.add(ll);
-		lstCharge.add(l2);
-		Category test = new Category(1,"Chambre",42,null,null,lstCharge);
-	Category test2 = new Category(1,"Cuisine",42,null,null,lstCharge);
-		
-		lstCat.add(test2);
-		lstCat.add(test);
-		int i = 0;			
-	Iterator itr = lstCat.iterator();
-			Category cat;
-			while(itr.hasNext()){
-				cat = (Category)itr.next();
-				i++;			
 			%>
-			  <div class="panel panel-default">
+			<%= (String)request.getAttribute("test")%>
+			
+			<%
+
+			ArrayList<Category> lstCat =(ArrayList<Category>) request.getAttribute("list");;
+			if(false){
+				Iterator<Category> itr = lstCat.iterator();
+						
+				Category cat;
+				int i = 0;
+			
+				while(itr.hasNext()){
+					cat = (Category)itr.next();
+					i++;			
+			%>
+						  <div class="panel panel-default">
 			    <div class="panel-heading">
 			      <h4 class="panel-title">
 			        <a data-toggle="collapse" data-parent="#accordion" href=<%="#collapse"+i%>>
@@ -157,7 +153,8 @@
 						    </tr>
 						    <tr>
 						    
-						  <%}%>
+						  <%}
+						}%>
 						      
 						  </tbody>
 						</table>

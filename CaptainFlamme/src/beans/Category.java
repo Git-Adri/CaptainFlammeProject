@@ -19,6 +19,9 @@ public class Category {
 		this.interrupteurs = interrupteurs;
 		this.charges = charges;
 	}
+	public Category() {
+	
+	}
 	public int getIdCategory() {
 		return idCategory;
 	}

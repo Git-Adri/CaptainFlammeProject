@@ -1,4 +1,4 @@
-package com.servlet;
+package servlet;
 
 //用于获取设定用户暂停的次数即加一
 //username
@@ -22,7 +22,7 @@ public class servlet_setstoptimes extends HttpServlet {
 		// 接受客户端的信息
 		String username = req.getParameter("username");
 		// 新建服务的对象
-		com.serviceactivity.service se = new com.serviceactivity.service();
+		serviceactivity.service se = new serviceactivity.service();
 
 		se.db.connectDB();
 

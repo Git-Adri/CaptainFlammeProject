@@ -1,4 +1,4 @@
-package com.servlet;
+package servlet;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.serviceactivity.InterrupteurService;
+import serviceactivity.InterrupteurService;
 
 public class GetInterrupteurServlet  extends HttpServlet{
 
@@ -24,18 +24,8 @@ public class GetInterrupteurServlet  extends HttpServlet{
 	
 		InterrupteurService   is = new InterrupteurService();
 		
-	
 		
 		
-		
-		
-		
-		
-	
-		
-		
-		
-	
 	
 	
 	

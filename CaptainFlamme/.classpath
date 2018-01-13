@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/commons-lang.jar"/>
 	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/commons-collections.jar"/>
 	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/commons-beanutils-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/WiP/Cap/CaptainFlammeProject/CaptainFlamme/library/mysql-connector-java-5.1.45-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,15 +1,14 @@
-package com.serviceactivity;
+package serviceactivity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.db.DBmanager;
-
 import beans.BoitierSecondaire;
 import beans.Charge;
 import beans.Interrupteur;
 import beans.Interrupteur.etatActuelType;
+import db.DBmanager;
 import beans.InterrupteurPhysique;
 import beans.Charge.etatDefaultType;
 import beans.Charge.prioriteType;

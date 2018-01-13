@@ -1,15 +1,15 @@
-package com.servlet;
+package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class servlet_login extends HttpServlet {
+
+public class servlet_register extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -17,47 +17,48 @@ public class servlet_login extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		// 接受客户端的信息
-		
+		String name = req.getParameter("username");
+		String phonenumber = req.getParameter("phonenumber");
 		String password = req.getParameter("password");
-		String username = req.getParameter("username");
+		String realname = req.getParameter("realname");
+		String sex= req.getParameter("sex");
+		
 		// 新建服务的对象
-	//System.out.println(password+studentId);	
 		
-		com.serviceactivity.service s = new com.serviceactivity.service();
-		
+		serviceactivity.service s = new serviceactivity.service();
 		s.db.connectDB();
+		
 		try {
 
 			
 			resp.setCharacterEncoding("UTF-8");
-			
-			
-			
-			
-	        ResultSet  rs =s.login(password, username);
+		//	System.out.println(name+phonenumber+password+studentId);
+			int re =s.register(name, sex, realname, phonenumber, password);
          
-	 
-	 if(rs.next()){
+			if (re!=0) {
+				
+			
+			
 			PrintWriter out = resp.getWriter();
 			
-		System.out.println("login success");	
-			s.db.closeDB();
-			out.print("login success");
-
-			out.flush();
-			out.close();}
-	 
-	 
-	 else {
-		 PrintWriter out = resp.getWriter();
+			System.out.println(re);
 			
-			
-			s.db.closeDB();
-			out.print("login fail");
+			out.print("register success");
 
 			out.flush();
 			out.close();
-	}
+			}else {
+				PrintWriter out = resp.getWriter();
+				
+				System.out.println(re);
+				
+				out.print("register fail");
+
+				out.flush();
+				out.close();	
+			}
+			
+			s.db.closeDB();
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -1,7 +1,8 @@
-package com.servlet;
+package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.Category;
+import serviceactivity.CategoryService;
 
 
 /**
@@ -32,12 +34,11 @@ public class GestionCatServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ArrayList<Category> lstCat = new ArrayList<Category>();
-		Category test = new Category(1,"test",42,null,null,null);
-		lstCat.add(test);
-		request.setAttribute("listeCat", lstCat);
-		getServletContext().getRequestDispatcher("/GestionCat.jsp").forward(request, response);
 		
+		ArrayList<Category> lstCat = CategoryService.getCategoryList();
+		request.setAttribute("list", lstCat);
+
+		request.getRequestDispatcher("/GestionCat.jsp").forward(request, response);	
 	}
 
 	

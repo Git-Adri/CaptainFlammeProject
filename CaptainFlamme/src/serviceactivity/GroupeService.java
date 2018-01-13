@@ -1,14 +1,13 @@
-package com.serviceactivity;
+package serviceactivity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import com.db.DBmanager;
-
 import beans.Charge;
 import beans.GroupeCharge;
+import db.DBmanager;
 
 public class GroupeService {
 	private static Hashtable<Integer,GroupeCharge> groupeList = new Hashtable<Integer,GroupeCharge>();

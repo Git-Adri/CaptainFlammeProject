@@ -1,4 +1,4 @@
-package com.serviceactivity;
+package serviceactivity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,8 +9,7 @@ import beans.Charge;
 import beans.Charge.etatActuelType;
 import beans.Charge.etatDefaultType;
 import beans.Charge.prioriteType;
-
-import com.db.DBmanager;
+import db.DBmanager;
 
 public class ChargeService {
 	private static Hashtable<Integer,Charge> chargesList = new Hashtable<Integer,Charge>();

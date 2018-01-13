@@ -1,10 +1,16 @@
-package com.db;
+package db;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import com.mysql.jdbc.Connection;
+
 //该类主要是完成和数据库的连接，对基本的数据库操作的进行方法上的定义，供后续的使用
 public class DBmanager {
 
@@ -12,9 +18,9 @@ public class DBmanager {
 	
 	// 数据库连接常量
     public static final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String USER = "root";
+    public static final String USER = "Captain";
     public static final String PASS = "123456";
-    public static final String URL = "jdbc:mysql://localhost:3306/teach";
+    public static final String URL = "jdbc:mysql://localhost:3306/Captain";
 
     // 静态成员，支持单态模式
     private static DBmanager per = null;
@@ -50,7 +56,7 @@ public class DBmanager {
     public void connectDB() {
         System.out.println("Connecting to database...");
         try {
-            conn = DriverManager.getConnection(URL, USER, PASS);
+            conn = (Connection) DriverManager.getConnection(URL, USER, PASS);
             stmt = conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,7 +81,10 @@ public class DBmanager {
     public ResultSet executeQuery(String sql) {
         ResultSet rs = null;
         try {
-            rs = stmt.executeQuery(sql);
+        	connectDB();
+         
+        	rs = stmt.executeQuery(sql);
+            closeDB();
         } catch (SQLException e) {
             e.printStackTrace();
         }
