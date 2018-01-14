@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import beans.BoitierPrimaire;
 import beans.BoitierSecondaire;
 import beans.Charge;
 import beans.Interrupteur;
@@ -13,12 +14,51 @@ import beans.InterrupteurPhysique;
 import beans.Charge.etatDefaultType;
 import beans.Charge.prioriteType;
 //image 1   and boitier  charge
-public class Boitier {
+public class BoitierService {
 	
 	public static DBmanager db = DBmanager.createInstance();
 
 	
-	
+	static public ArrayList<BoitierPrimaire> getBoitierList(){
+		ArrayList<BoitierPrimaire> list = new ArrayList<BoitierPrimaire>();
+		try {
+			String sql = "select * from boitier_primaire";
+			ResultSet  rs1 = db.executeQuery(sql);
+			
+			if(rs1.next()) { 
+				int id = rs1.getInt(0);
+				String nom = rs1.getString(1);
+				double conso = rs1.getDouble(2);
+			
+				list.add(new BoitierPrimaire(nom,conso,id,null));
+			}
+			
+		}
+		catch(SQLException e) {
+			
+		}
+		
+		return list;
+	}
+	static public BoitierPrimaire getBoitierFromName(String name) {
+		try {
+			String sql = "select * from boitier_primaire where nom="+name;
+			ResultSet  rs1 = db.executeQuery(sql);
+			
+			if(rs1.next()) { 
+				int id = rs1.getInt(0);
+				String nom = rs1.getString(1);
+				double conso = rs1.getDouble(2);
+				
+				return new BoitierPrimaire(nom,conso,id,null);
+			}
+			
+		}
+		catch(SQLException e) {
+			
+		}
+		return null;
+	}
 	
 	public ArrayList<BoitierSecondaire> getboiftiersecondaire() {
 		

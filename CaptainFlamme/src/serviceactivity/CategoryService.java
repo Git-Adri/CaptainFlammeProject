@@ -17,7 +17,6 @@ public class CategoryService {
 
 		Category cat=null;
 		try {
-			db.connectDB();
 			String sql1 = "select * from category where name="
 					+ name;
 
@@ -39,7 +38,6 @@ public class CategoryService {
 				
 				cat = new Category(id,nom,conso,groupeChargeList,interList,chargelist);
 
-				db.closeDB();
 				return cat;
 			}
 		} catch (SQLException e) {

@@ -1,7 +1,7 @@
 <%@ page language="java" 
     contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
-    import="beans.Charge,beans.Category,java.util.*,serviceactivity.CategoryService"
+    import="beans.Charge,beans.GroupeCharge,beans.Interrupteur,beans.Category,java.util.*"
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,7 +102,7 @@
 			<%
 
 			ArrayList<Category> lstCat =(ArrayList<Category>) request.getAttribute("list");;
-			if(false){
+			if(lstCat!=null){
 				Iterator<Category> itr = lstCat.iterator();
 						
 				Category cat;
@@ -153,15 +153,93 @@
 						    </tr>
 						    <tr>
 						    
-						  <%}
-						}%>
-						      
+					 <%}%>
+				      
 						  </tbody>
 						</table>
     				</div>
+    				 <div class="panel-body">
+			         <div class="row">
+				      	<div class="pull-bottom">
+				      		<h4>Groupe Charge</h4>
+				      	</div>
+				        <div class="pull-right pull-bottom">
+					       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Ajouter charge</button>
+			    
+			      
+				  
+		        		</div>
+			        </div>
+					    <table class="table">
+						  <thead>
+						    <tr>
+						      <th scope="col" class="col-sm-3">Nom</th>
+						      <th scope="col" class="col-sm-3">Id</th>
+						      <th scope="col" class="col-sm-3">Consommation</th>
+						      <th scope="col" class="col-sm-2">Editer</th>
+						      <th scope="col" class="col-sm-1">Supprimer</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  <% for(GroupeCharge c : cat.getGroupesCharge()){ %>
+						    <tr>
+						      <th scope="row"><%= c.getNomGroupe()%></th>
+						      <td><%= c.getIdGroupe()%></td>
+						      <td><%= c.getConsommation()%></td>
+						      <td>edit</td>
+						      <td><a href="#">X</a></td>
+						    </tr>
+						    <tr>
+						    
+					 <%}%>
+				      
+						  </tbody>
+						</table>
+    				</div>
+    				 <div class="panel-body">
+			         <div class="row">
+				      	<div class="pull-bottom">
+				      		<h4>Interrupteurs</h4>
+				      	</div>
+				        <div class="pull-right pull-bottom">
+					       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Ajouter charge</button>
+			    
+			      
+				  
+		        		</div>
+			        </div>
+					    <table class="table">
+						  <thead>
+						    <tr>
+						      <th scope="col" class="col-sm-3">Nom</th>
+						      <th scope="col" class="col-sm-3">Id</th>
+						      <th scope="col" class="col-sm-3">Etat</th>
+						      <th scope="col" class="col-sm-2">Editer</th>
+						      <th scope="col" class="col-sm-1">Supprimer</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  <% for(Interrupteur c : cat.getInterrupteurs()){ %>
+						    <tr>
+						      <th scope="row"><%= c.getId()%></th>
+						      <td><%= c.getNom() %></td>
+						      <td><%= c.getEtatActuel()%></td>
+						      <td>edit</td>
+						      <td><a href="#">X</a></td>
+						    </tr>
+						    <tr>
+						    
+					 <%}%>
+				      
+						  </tbody>
+						</table>
+    				</div>
+    					
 	  			</div>
 			</div>
-		<% }%>
+		<% }
+}%>
+		
 	</div> <!-- /container -->
 	    </div> 
 		</div>
